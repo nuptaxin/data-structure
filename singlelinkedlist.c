@@ -45,10 +45,24 @@ void insertElement(Link *p, int index, int value) {
     p->next = temp;
 }
 
+void deleteElement(Link *p, int index) {
+    int start = 0;
+    while (start < index - 1) {
+        p = p->next;
+        start++;
+    }
+    Link *temp = p->next;
+    p->next = temp->next;
+    free(temp);
+
+}
+
 int main() {
     Link *p = intLink();
     displayLink(p);
     insertElement(p, 1, 11);
+    displayLink(p);
+    deleteElement(p, 4);
     displayLink(p);
     return 0;
 }
