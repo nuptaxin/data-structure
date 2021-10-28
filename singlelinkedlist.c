@@ -69,6 +69,15 @@ int searchElement(Link *p, int element) {
     return -1;
 }
 
+void updateElement(Link *p, int index, int value) {
+    int start = 0;
+    while (start < index) {
+        p = p->next;
+        start++;
+    }
+    p->element = value;
+}
+
 int main() {
     Link *p = intLink();
     displayLink(p);
@@ -77,5 +86,7 @@ int main() {
     deleteElement(p, 4);
     displayLink(p);
     printf("search 3 index:%d\n", searchElement(p, 3));
+    updateElement(p, 2, 22);
+    displayLink(p);
     return 0;
 }
