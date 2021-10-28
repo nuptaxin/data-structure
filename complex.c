@@ -2,7 +2,6 @@
 // Created by Eric Ren on 2021/10/27.
 //
 #include <stdio.h>
-#include <stdlib.h>
 typedef struct complex{
     float x,y;
 } Complex;
