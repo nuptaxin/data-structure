@@ -30,10 +30,25 @@ void displayLink(Link *temp) {
         printf("%d ", temp->element);
         temp = temp->next;
     }
+    printf("\n");
+}
+
+void insertElement(Link *p, int index, int value) {
+    int start = 0;
+    while (start < index - 1) {
+        p = p->next;
+        start++;
+    }
+    Link *temp = (Link *) malloc(sizeof(Link));
+    temp->element = value;
+    temp->next = p->next;
+    p->next = temp;
 }
 
 int main() {
     Link *p = intLink();
+    displayLink(p);
+    insertElement(p, 1, 11);
     displayLink(p);
     return 0;
 }
